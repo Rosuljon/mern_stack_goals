@@ -1,9 +1,11 @@
 import express from 'express';
 import {getGoals, postGoals, putGoals, deleteGoals} from '../controller/goalController.js';
+import {protect} from '../middleware/authMiddleware.js'
+
 const router = express.Router();
 
-router.route('/').get(getGoals).post(postGoals);
-router.route('/:id').put(putGoals).delete(deleteGoals);
+router.route('/').get(protect,getGoals).post(protect,postGoals);
+router.route('/:id').put(protect,putGoals).delete(protect,deleteGoals);
 
 
 export default router;
