@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/api/goals/';
+const API_URL = 'https://mernapp-goal7.herokuapp.com/api/goals/';
 
 
 //create a new gaol
